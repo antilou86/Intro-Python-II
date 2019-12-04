@@ -55,25 +55,25 @@ while True:
 
     if cmd ==  "n":
         #check if there is a room, then move north
-        if #room exists :
+        if #.n_to in the player's current room is not None:
             #move to room
         else:
             print("Hmm, I can't go North from here")
     elif cmd == "s":
         #check if there is a room, then move south
-        if #room exists :
+        if #.s_to in the player's current room is not None:
             #move to room
         else:
             print("Hmm, I can't go South from way")
     elif cmd == "e":
         #check if there is a room, then move east
-        if #room exists :
+        if #.e_to in the player's current room is not None:
             #move to room
         else:
             print("Hmm, I can't go East from here")
     elif cmd == "w":
         #check if there is a room, then move west
-        if #room exists :
+        if #.w_to in the player's current room is not None:
             #move to room
         else:
             print("Hmm, I can't go West from here")
