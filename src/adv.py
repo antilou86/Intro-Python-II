@@ -58,25 +58,25 @@ while True:
         if #room exists :
             #move to room
         else:
-            print("Hmm, I can't go that way")
+            print("Hmm, I can't go North from here")
     elif cmd == "s":
         #check if there is a room, then move south
         if #room exists :
             #move to room
         else:
-            print("Hmm, I can't go that way")
+            print("Hmm, I can't go South from way")
     elif cmd == "e":
         #check if there is a room, then move east
         if #room exists :
             #move to room
         else:
-            print("Hmm, I can't go that way")
+            print("Hmm, I can't go East from here")
     elif cmd == "w":
         #check if there is a room, then move west
         if #room exists :
             #move to room
         else:
-            print("Hmm, I can't go that way")
+            print("Hmm, I can't go West from here")
     elif cmd == "q":
         #quit game
         print("Buh-Bye now")
