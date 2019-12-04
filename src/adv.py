@@ -1,4 +1,5 @@
 from room import Room
+from player import Player
 
 # Declare all the rooms
 
@@ -38,6 +39,7 @@ room['treasure'].s_to = room['narrow']
 #
 
 # Make a new player object that is currently in the 'outside' room.
+p1 = Player(room['outside'])
 
 # Write a loop that:
 #
@@ -50,37 +52,40 @@ room['treasure'].s_to = room['narrow']
 #
 # If the user enters "q", quit the game.
 
+
 while True:
+    print(f"You are at the {p1.room.name}.\n{p1.room.description}\n")
     cmd=input(">>> ")
 
     if cmd ==  "n":
-        #check if there is a room, then move north
-        if #.n_to in the player's current room is not None:
-            #move to room
+        if (p1.room.n_to != None):
+            p1.room = p1.room.n_to
+            pass
         else:
-            print("Hmm, I can't go North from here")
+            print("Hmm, can't go North from here...\n")
+            
     elif cmd == "s":
-        #check if there is a room, then move south
-        if #.s_to in the player's current room is not None:
-            #move to room
+        if (p1.room.s_to != None):
+            p1.room = p1.room.s_to
+            pass
         else:
-            print("Hmm, I can't go South from way")
+            print("Hmm, can't go South from here...\n")
+
     elif cmd == "e":
-        #check if there is a room, then move east
-        if #.e_to in the player's current room is not None:
-            #move to room
+        if (p1.room.e_to != None):
+            p1.room = p1.room.e_to
+            pass
         else:
-            print("Hmm, I can't go East from here")
+            print("Hmm, can't go East from here...\n")
     elif cmd == "w":
-        #check if there is a room, then move west
-        if #.w_to in the player's current room is not None:
-            #move to room
+        if (p1.room.w_to != None):
+            p1.room = p1.room.w_to
+            pass
         else:
-            print("Hmm, I can't go West from here")
+            print("Hmm, can't go West from here...\n")
     elif cmd == "q":
-        #quit game
-        print("Buh-Bye now")
+        print("Buh-Bye now, play again soon")
         break
     else:
-        print("Sorry, I don't understand that command.")
+        print("Sorry, I don't understand that command...")
     pass
