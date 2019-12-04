@@ -52,9 +52,9 @@ p1 = Player(room['outside'])
 #
 # If the user enters "q", quit the game.
 
-
+print("Welcome to the cave of wonders. An ancient treasure lies within. \n travel the depths and discover riches beyond your wildest dreams. \n")
 while True:
-    print(f"You are at the {p1.room.name}.\n{p1.room.description}\n")
+    print(f"{p1.room.name}.\n{p1.room.description}\n")
     cmd=input(">>> ")
 
     if cmd ==  "n":
