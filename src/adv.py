@@ -49,3 +49,38 @@ room['treasure'].s_to = room['narrow']
 # Print an error message if the movement isn't allowed.
 #
 # If the user enters "q", quit the game.
+
+while True:
+    cmd=input(">>> ")
+
+    if cmd ==  "n":
+        #check if there is a room, then move north
+        if #room exists :
+            #move to room
+        else:
+            print("Hmm, I can't go that way")
+    elif cmd == "s":
+        #check if there is a room, then move south
+        if #room exists :
+            #move to room
+        else:
+            print("Hmm, I can't go that way")
+    elif cmd == "e":
+        #check if there is a room, then move east
+        if #room exists :
+            #move to room
+        else:
+            print("Hmm, I can't go that way")
+    elif cmd == "w":
+        #check if there is a room, then move west
+        if #room exists :
+            #move to room
+        else:
+            print("Hmm, I can't go that way")
+    elif cmd == "q":
+        #quit game
+        print("Buh-Bye now")
+        break
+    else:
+        print("Sorry, I don't understand that command.")
+    pass
