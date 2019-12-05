@@ -66,7 +66,11 @@ p1 = Player(room['outside'])
 
 print("Welcome to your adventure. An ancient treasure lies within. \nTravel the depths and discover riches beyond your wildest dreams. \n")
 while True:
-    print(f"{p1.room.name}.\n{p1.room.description}\n")
+    if len(p1.room.items) != 0:
+        print(f"{p1.room.name}.\n{p1.room.description}\nYou can see the following items: {p1.room.items}")
+    else:
+        print(f"{p1.room.name}.\n{p1.room.description}\n")
+
     cmd=input(">>> ")
 
     if cmd ==  "n":
