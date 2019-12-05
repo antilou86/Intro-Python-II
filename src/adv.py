@@ -39,9 +39,17 @@ room['treasure'].s_to = room['narrow']
 # Main
 #
 # guess i'll declare the items here.
-sword = Item("sword", "flaming")
-shield = Item("shield", "broken")
-key = Item("key", "rusty")
+item = {
+    sword: Item("sword", "flaming"),
+    shield: Item("shield", "broken"),
+    key: Item("key", "rusty"),
+}
+
+#adding items to rooms
+# choose a room to place items
+room['foyer'].items = item[key]
+room['overlook'].items = item[sword]
+room['narrow'].items = item[shield]
 
 # Make a new player object that is currently in the 'outside' room.
 p1 = Player(room['outside'])
@@ -88,6 +96,9 @@ while True:
             pass
         else:
             print("Hmm, can't go West from here...\n")
+    elif cmd == "inv" or cmd == "i" or cmd == "inventory":
+        p1.print_inv()
+        pass
     elif cmd == "q":
         print("Buh-Bye now, play again soon")
         break

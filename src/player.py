@@ -15,3 +15,9 @@ class Player():
         self.items.remove(item)
         current_room.items.append(item)
         print(f"dropped {item.description} {item.name}")
+    
+    def print_inv(self):
+        if len(self.items) != 0:
+            print(f"Current inventory: {self.items}")
+        else:
+            print("There is nothing in your inventory.")

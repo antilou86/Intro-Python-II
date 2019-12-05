@@ -14,5 +14,9 @@ class Room():
             self.items=items
         else:
             self.items=[]
+        
     def __str__(self):
-        print(f"Room name: {self.name} \nDescription: {self.description}")
+        if len(self.items) != 0:
+            print(f"Room name: {self.name} \nDescription: {self.description}\n Available Items: {self.items}")
+        else:
+            print(f"Room name: {self.name} \nDescription: {self.description}")
