@@ -40,16 +40,15 @@ room['treasure'].s_to = room['narrow']
 #
 # guess i'll declare the items here.
 item = {
-    sword: Item("sword", "flaming"),
-    shield: Item("shield", "broken"),
-    key: Item("key", "rusty"),
+    'sword': Item("sword", "flaming"),
+    'shield': Item("shield", "broken"),
+    'key': Item("key", "rusty"),
 }
 
-#adding items to rooms
 # choose a room to place items
-room['foyer'].items = item[key]
-room['overlook'].items = item[sword]
-room['narrow'].items = item[shield]
+room['foyer'].items = item['key']
+room['overlook'].items = item['sword']
+room['narrow'].items = item['shield']
 
 # Make a new player object that is currently in the 'outside' room.
 p1 = Player(room['outside'])
