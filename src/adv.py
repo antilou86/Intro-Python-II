@@ -38,6 +38,10 @@ room['treasure'].s_to = room['narrow']
 #
 # Main
 #
+# guess i'll declare the items here.
+sword = Item("sword", "flaming")
+shield = Item("shield", "broken")
+key = Item("key", "rusty")
 
 # Make a new player object that is currently in the 'outside' room.
 p1 = Player(room['outside'])

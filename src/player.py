@@ -2,5 +2,16 @@
 # currently.
 
 class Player():
-    def __init__(self, current_room):
+    def __init__(self, room):
         self.room= current_room
+        self.items = []
+
+    def get_item(self, item):
+        self.items.append(item)
+        current_room.remove(item)
+        print(f"picked up {item.description} {item.name}")
+
+    def drop_item(self, item, current_room):
+        self.items.remove(item)
+        current_room.items.append(item)
+        print(f"dropped {item.description} {item.name}")
