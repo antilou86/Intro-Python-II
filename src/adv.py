@@ -1,5 +1,6 @@
 from room import Room
 from player import Player
+from item import Item
 
 # Declare all the rooms
 
@@ -52,7 +53,7 @@ p1 = Player(room['outside'])
 #
 # If the user enters "q", quit the game.
 
-print("Welcome to the cave of wonders. An ancient treasure lies within. \n travel the depths and discover riches beyond your wildest dreams. \n")
+print("Welcome to your adventure. An ancient treasure lies within. \nTravel the depths and discover riches beyond your wildest dreams. \n")
 while True:
     print(f"{p1.room.name}.\n{p1.room.description}\n")
     cmd=input(">>> ")
