@@ -7,14 +7,14 @@ class Player():
         self.items = []
 
     def get_item(self, item):
+        self.room.items.remove(item)
         self.items.append(item)
-        current_room.remove(item)
         print(f"picked up {item.description} {item.name}")
 
-    def drop_item(self, item, current_room):
+    def drop_item(self, item):
         self.items.remove(item)
-        current_room.items.append(item)
-        print(f"dropped {item.description} {item.name}")
+        self.room.items.append(item)
+        print(f"Dropped {item.description} {item.name}")
     
     def print_inv(self):
         if len(self.items) != 0:

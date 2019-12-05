@@ -73,38 +73,62 @@ while True:
 
     cmd=input(">>> ")
 
-    if cmd ==  "n":
-        if (p1.room.n_to != None):
-            p1.room = p1.room.n_to
-            pass
-        else:
-            print("Hmm, can't go North from here...\n")
-            
-    elif cmd == "s":
-        if (p1.room.s_to != None):
-            p1.room = p1.room.s_to
-            pass
-        else:
-            print("Hmm, can't go South from here...\n")
+    if len(cmd.split(" ")) == 1:
+        if cmd ==  "n":
+            if (p1.room.n_to != None):
+                p1.room = p1.room.n_to
+                pass
+            else:
+                print("Hmm, can't go North from here...\n")
+                
+        elif cmd == "s":
+            if (p1.room.s_to != None):
+                p1.room = p1.room.s_to
+                pass
+            else:
+                print("Hmm, can't go South from here...\n")
 
-    elif cmd == "e":
-        if (p1.room.e_to != None):
-            p1.room = p1.room.e_to
+        elif cmd == "e":
+            if (p1.room.e_to != None):
+                p1.room = p1.room.e_to
+                pass
+            else:
+                print("Hmm, can't go East from here...\n")
+        elif cmd == "w":
+            if (p1.room.w_to != None):
+                p1.room = p1.room.w_to
+                pass
+            else:
+                print("Hmm, can't go West from here...\n")
+        elif cmd == "inv" or cmd == "i" or cmd == "inventory":
+            p1.print_inv()
             pass
+        elif cmd == "q":
+            print("Buh-Bye now, play again soon")
+            break
         else:
-            print("Hmm, can't go East from here...\n")
-    elif cmd == "w":
-        if (p1.room.w_to != None):
-            p1.room = p1.room.w_to
+            print("Sorry, I don't understand that command...")
             pass
-        else:
-            print("Hmm, can't go West from here...\n")
-    elif cmd == "inv" or cmd == "i" or cmd == "inventory":
-        p1.print_inv()
-        pass
-    elif cmd == "q":
-        print("Buh-Bye now, play again soon")
-        break
-    else:
-        print("Sorry, I don't understand that command...")
-        pass
+    elif:
+        len(cmd.split(" ")) == 2:
+            multi_cmd: cmd.split(" ")
+            first: multi_cmd[0]
+            second: multi_cmd[1]
+            if first.lower() == "get" or first.lower() == "take":
+                for i in p1.room.items:
+                    if second.lower() == i.name:
+                        get_item(self, i)
+                    else:
+                        print(f"sorry, there doesn't seem to be a {second} here")
+    elif:
+        len(cmd.split(" ")) == 2:
+            multi_cmd: cmd.split(" ")
+            first: multi_cmd[0]
+            second: multi_cmd[1]
+            if first.lower() == "drop"
+                for i in p1.items:
+                    if second.lower() == i.name:
+                        drop_item(self, i)
+                    else:
+                        print(f"sorry, there doesn't seem to be a {second} here")
+    
