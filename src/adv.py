@@ -46,9 +46,9 @@ item = {
 }
 
 # choose a room to place items
-room['foyer'].items = item['key']
-room['overlook'].items = item['sword']
-room['narrow'].items = item['shield']
+room['foyer'].items.append(item['key']) 
+room['overlook'].items.append(item['sword'])
+room['narrow'].items.append(item['shield'])
 
 # Make a new player object that is currently in the 'outside' room.
 p1 = Player(room['outside'])
@@ -64,17 +64,18 @@ p1 = Player(room['outside'])
 #
 # If the user enters "q", quit the game.
 
-print("Welcome to your adventure. An ancient treasure lies within. \nTravel the depths and discover riches beyond your wildest dreams. \n")
+print("\nWelcome to your adventure. An ancient treasure lies within. \nTravel the depths and discover riches beyond your wildest dreams. \n")
 while True:
-    if len(p1.room.items) != 0:
-        print(f"{p1.room.name}.\n{p1.room.description}\nYou can see the following items: {p1.room.items}\n\n")
+    if len(p1.room.items) == 0:
+        print(f"{p1.room.name}.\n{p1.room.description}\n")
     else:
-        print(f"{p1.room.name}.\n{p1.room.description}\n\n")
-
+        print(f"{p1.room.name}.\n{p1.room.description}\n")
+        p1.room.print_inv()
+    
     cmd=input(">>> ")
 
     if len(cmd.split(" ")) == 1:
-        if cmd ==  "n":
+        if cmd == "n":
             if (p1.room.n_to != None):
                 p1.room = p1.room.n_to
                 pass
@@ -109,26 +110,24 @@ while True:
         else:
             print("Sorry, I don't understand that command...")
             pass
-    elif:
-        len(cmd.split(" ")) == 2:
-            multi_cmd: cmd.split(" ")
-            first: multi_cmd[0]
-            second: multi_cmd[1]
+    elif len(cmd.split(" ")) == 2:
+            multi_cmd= cmd.split(" ")
+            first= multi_cmd[0]
+            second= multi_cmd[1]
             if first.lower() == "get" or first.lower() == "take":
                 for i in p1.room.items:
                     if second.lower() == i.name:
-                        get_item(self, i)
+                        p1.get_item(i)
                     else:
                         print(f"sorry, there doesn't seem to be a {second} here")
-    elif:
-        len(cmd.split(" ")) == 2:
-            multi_cmd: cmd.split(" ")
-            first: multi_cmd[0]
-            second: multi_cmd[1]
-            if first.lower() == "drop"
+            elif first.lower() == "drop":
                 for i in p1.items:
                     if second.lower() == i.name:
-                        drop_item(self, i)
+                        p1.drop_item(i)
                     else:
-                        print(f"sorry, there doesn't seem to be a {second} here")
+                        print(f"you have no {second} to drop")
+            else:
+                print("wait, what was that command?")
+
+                
     
